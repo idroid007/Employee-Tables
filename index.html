@@ -1,0 +1,91 @@
+
+
+    <!doctype html>
+    <html >
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> 
+       <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Employee</title>
+        
+    </head>
+      <body ng-app="employee" >
+            <div class="jumbotron myjumbotron">
+                    <h1>Employee Management</h1>
+                    <p> small project for selection in <span class="pulseText">TekChand</span></p>
+                </div>
+                <!-- application container-->
+                <div class="container"  >
+                    <!-- employee form row-->
+                        <div class="row" ng-controller="employeeForm">
+                            <div class="col-md-4 offset-md-4">
+                                <h1>Employee Form</h1>
+                        
+                             <!-- Form For employee-->
+                             <form class="form-horizontal" role="form" ng-submit="addRow()">
+                                    <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text"  required class="form-control" id="name" placeholder="Name" ng-model="name">
+                                          </div>
+                                    <div class="form-group">
+                                            <label for="em_code">Employee Code</label>
+                                            <input type="text" required class="form-control" id="emp_code" placeholder="employee code" ng-model="emp_code">
+                                          </div>
+                                    <div class="form-group">
+                                            <label for="profile">Profile</label>
+                                            <input type="text" required class="form-control" id="profile" placeholder="Designation" ng-model="profile">
+                                          </div>
+                                    <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" required class="form-control" id="email" placeholder="email" ng-model="email">
+                                          </div>
+                                    <div class="form-group">
+                                            <p class="text-danger" ng-show="duplicate">Row Already Present</p>		
+                                        <div >
+                                            <input type="submit" value="Add Row" class="btn btn-outline-dark btn-lg"/>
+                                        </div>
+                                       
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- employee list row-->
+                        <div class="row"  ng-controller="employeeList">
+                               
+                                <div class="col-md-6 offset-md-3">
+                                        <h1>Employee List</h1>
+                                        <table class="table">
+                                                <thead class="thead-dark">
+                                                  <tr>
+                                                   
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Emp_code</th>
+                                                    <th scope="col">Profile</th>
+                                                    <th scope="col">Email</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr ng-repeat="e in list">
+                                                    
+                                                    <td>{{e.emp_code}}</td>
+                                                    <td>{{e.name}}</td>
+                                                    <td>{{e.profile}}</td>
+                                                    <td>{{e.email}}</td>
+                                                  </tr>
+                                                  
+                                                </tbody>
+                                              </table>
+                                              <button class="btn btn-success" ng-click="check(list)">{{data_state}}</button>   
+                                          
+                                            </div>
+                        </div>
+                </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+     <script src="app.js"></script>
+      </body>
+    </html>
+
