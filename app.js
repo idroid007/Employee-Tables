@@ -38,7 +38,7 @@ app.controller("employeeList",["$scope","dataFactory",function($scope,dataFactor
     /*this function accept all the rows (list) and send it factory method sendData which
     will send data to server
     */
-    $scope.check=function(rows){
+    $scope.send=function(rows){
         $scope.data_state="Sending.....";
      dataFactory.sendData(rows);
         
