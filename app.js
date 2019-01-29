@@ -60,7 +60,7 @@ app.factory("dataFactory",["$http",function($http){
         $http({
             method: 'POST',
             url: 'Employee',
-            data:rows
+            data:JSON.stringify({list:rows})
         }).then(function(response){
                 alert("Hurraayyyy Data Sent Succesffully");
              
